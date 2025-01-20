@@ -2,7 +2,6 @@ let listaDeNumerosSorteados = [];
 let numeroLimite = 100;
 let numeroSecreto = gerarNumeroAleatorio();
 let tentativas = 1;
-//console.log(numeroSecreto);
 
 function exibirTextoNaTela(tag, texto){
     let campo = document.querySelector(tag);
@@ -26,6 +25,10 @@ exibirMensagemInicial();
 
 function verificarChute(){
     let chute = document.querySelector('input').value;
+    if (chute == ''){
+        exibirTextoNaTela('p', 'Digite um número válido');
+        return;
+    }
     
     if (chute == numeroSecreto){
         
